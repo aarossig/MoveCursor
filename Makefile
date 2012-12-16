@@ -20,7 +20,7 @@ shared:
 	gcc -shared -o $(BIN)$(BIN_LIB) $(OBJ)$(OBJ_LIB) $(LDFLAGS)
 	
 run: all
-	$(BIN)/$(BIN_CLI) 800 600
+	$(BIN)$(BIN_CLI) 800 600
 
 clean:
 	rm -f $(BIN)*
