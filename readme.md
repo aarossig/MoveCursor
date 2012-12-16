@@ -14,5 +14,5 @@ with complex datatypes.
 A simple program movecursor has been created to test this shared object from the
 command line.
 
-Usage: movecursor
+Usage: movecursor x y
 x and y must be integers
