@@ -10,14 +10,15 @@ BIN_CLI = $(SRC:.c=)
 OBJ_LIB = $(SRC:.c=.o)
 BIN_LIB = $(SRC:.c=.so)
 
+# Pass FLAGS=-m32 to compile for 32-bit.
 all: shared cli
 
 cli:
-	gcc -o $(BIN)$(BIN_CLI) $(SRC_CLI)$(SRC) $(BIN)$(BIN_LIB) 
+	gcc $(FLAGS) -o $(BIN)$(BIN_CLI) $(SRC_CLI)$(SRC) $(BIN)$(BIN_LIB) 
 
 shared:
-	gcc -fPIC -Wall -c -o $(OBJ)$(OBJ_LIB) $(SRC_LIB)$(SRC)
-	gcc -shared -o $(BIN)$(BIN_LIB) $(OBJ)$(OBJ_LIB) $(LDFLAGS)
+	gcc -fPIC -Wall -c $(FLAGS) -o $(OBJ)$(OBJ_LIB) $(SRC_LIB)$(SRC)
+	gcc -shared -o $(BIN)$(BIN_LIB) $(OBJ)$(OBJ_LIB) $(FLAGS) $(LDFLAGS)
 	
 run: all
 	$(BIN)$(BIN_CLI) 800 600
