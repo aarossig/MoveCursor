@@ -16,3 +16,9 @@ command line.
 
     Usage: movecursor x y
     x and y must be integers
+
+## Compiling
+
+Compiling should be as easy as running 'make'. In the event that you are running
+a 64-bit operating system and desire a 32-bit binary execute 'make FLAGS=-m32'
+and a 32-bit so file will be created.
