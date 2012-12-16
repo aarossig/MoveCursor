@@ -23,5 +23,5 @@ run: all
 	./$(EXEC) 800 600
 
 clean:
-	rm $(BIN)*
-	rm $(OBJ)*
+	rm -f $(BIN)*
+	rm -f $(OBJ)*
