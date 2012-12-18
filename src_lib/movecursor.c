@@ -7,4 +7,6 @@ void movecursor(int x, int y) {
         // Move to the destination window at absolute coordinates.
         XWarpPointer(myDisplay, 0, myWindow, 0, 0, 0, 0, x, y);
         XFlush(myDisplay);
+	
+	XCloseDisplay(myDisplay);
 }
